@@ -1,6 +1,7 @@
 import { io } from './http'
 import { Attributes, Card, CommonCards, HeroCards, TrunfoCards } from './cards'
-
+const N_HERO_CARDS_QTY = 5
+const N_COMMOM_CARDS_QTY = 11
 interface Room {
   text: string
   id: string
@@ -38,10 +39,10 @@ function createDeck() {
   const trunfoCard = TrunfoCards[Math.floor(Math.random() * TrunfoCards.length)]
   deck.push(trunfoCard)
   // Adicione 5 cartas Hero
-  const heroCards = shuffle(HeroCards).slice(0, 5)
+  const heroCards = shuffle(HeroCards).slice(0, N_HERO_CARDS_QTY)
   deck.push(...heroCards)
   // Adicione 11 cartas Common
-  const commonCards = shuffle(CommonCards).slice(0, 11)
+  const commonCards = shuffle(CommonCards).slice(0, N_COMMOM_CARDS_QTY)
   deck.push(...commonCards)
   return shuffle(deck) // Embaralhe o deck
 }
