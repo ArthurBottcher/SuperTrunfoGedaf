@@ -1,14 +1,7 @@
+import { Router } from './Routes'
 import './styles/global.css'
-import { io } from "socket.io-client";
 function App() {
-  
-
-  return (
-    <main>
-      <h1>Teste</h1> 
-     
-    </main>
-  )
+  return <Router />
 }
 
 export default App
